@@ -1,15 +1,238 @@
 <template>
   <div id="app">
-    <h1> 这是诗词轩Web应用 </h1>
-    <router-view/>
+    <!-- <h1> 这是诗词轩Web应用 </h1> -->
+    <el-container class="layer-container">
+      <el-header class="head" height="80px">
+        <div class="head-left">
+          <div class="head-app-icon" @click="goToHome">
+            <i class="iconfont icon-wenxue"></i>
+            <a class="app-icon" alt="">诗词轩</a>
+          </div>
+          <div class="head-forward-backward">
+            <i class="el-icon-arrow-left" @click="backward"></i>
+            <i class="el-icon-arrow-right" @click="forward"></i>
+          </div>
+          <div class="search">
+            <el-input
+              placeholder="请输入作者名或者诗词名"
+              v-model="searchValue"
+              size="small"
+              clearable
+              @keyup.native="onSearch"
+              class="search-input">
+              <i slot="prefix" class="el-input__icon el-icon-search" @click="onSearch"></i>
+            </el-input>
+          </div>
+        </div>
+        <div class="head-right">
+          <div class="head-profile">
+            <img class="profile-img" :src="myImage" alt="" @click="goToProfile">
+          </div>
+          <el-dropdown trigger="click">
+            <div class="userNameDiv" >
+              <span>{{userName}}<i class="el-icon-arrow-down el-icon--right"></i></span>
+            </div>
+            <el-dropdown-menu slot="dropdown">
+              <el-dropdown-item>个人信息设置</el-dropdown-item>
+              <el-dropdown-item>退出登录</el-dropdown-item>
+            </el-dropdown-menu>
+          </el-dropdown>
+          <div class="setting" @click="onSetting">
+            <i class="iconfont icon-shezhi"></i>
+          </div>
+        </div>
+      </el-header>
+      <el-container>
+        <el-aside class="aside" width="100px">Aside</el-aside>
+        <el-main class="main">Main</el-main>
+      </el-container>
+    </el-container>
+    <router-view />
   </div>
 </template>
 
 <script>
+import profileImg from '../src/assets/profile.jpg'
+import logoImg from '../src/assets/logoR.png'
+
 export default {
-  name: 'App'
+  name: 'App',
+  components: {},
+  props: {},
+  data () {
+    return {
+      searchValue: '',
+      myImage: profileImg,
+      userName: 'yunxijun',
+      logoImg
+    }
+  },
+  computed: {},
+  watch: {},
+  created () {},
+  mounted () {},
+  methods: {
+    backward () {
+      console.log('onBackwardClick')
+    },
+    forward () {
+      console.log('onForwardClick')
+    },
+    onSearch (e) {
+      if (e.keyCode === 13 || e.type === 'click') {
+        console.log('搜索内容')
+        console.log(e)
+        console.log(this.searchValue)
+      }
+    },
+    goToProfile () {
+      console.log('进入我的Profile页面')
+    },
+    goToHome () {
+      console.log('回到首页')
+    },
+    onSetting () {
+      console.log('进入setting页面')
+    }
+  }
 }
 </script>
 
 <style lang="less">
+
+.layer-container {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.head {
+  border-bottom: 1px solid #ccc;
+  background-color: rgb(0, 0, 0);
+  color: #ffffff;
+  justify-content: space-between;
+  display: flex;
+  align-items: center;
+  padding: 0px;
+  .head-app-icon {
+    .icon-wenxue {
+      margin-right: 10px;
+      border-radius: 60%;
+      align-items: center;
+    }
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+  }
+  .head-left {
+    display: flex;
+    align-items: center;
+    height: 40px;
+  }
+  .head-right {
+    display: flex;
+    align-items: center;
+    height: 40px;
+  }
+  .head-forward-backward {
+      // border: 1px solid #ffffff;
+      margin-left: 90px;
+      width: 50px;
+      display: flex;
+      margin-right: 20px;
+      justify-content: space-between;
+      .el-icon-arrow-left {
+        border-radius: 50%;
+        border: 1px solid #313134
+        // width: 30px;
+      }
+      .el-icon-arrow-right {
+        border-radius: 50%;
+        border: 1px solid #313134
+      }
+  }
+  .search {
+    width: 193px;
+    .el-input__inner {
+      background-color: #2b2b2c;
+      border-radius: 20px;
+      border: 1px solid #000;
+      font-size: 10px;
+      color: #ffffff;
+    }
+  }
+}
+.setting {
+  width: 20px;
+  height: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  color: #ccc;
+}
+
+.setting:hover {
+  color: #ffffff;
+}
+
+.app-icon {
+  width: 300px;
+  height: 80px;
+  font-size: 20px;
+  font-family:"隶书";
+  // font-weight: bold;
+  text-align: center;
+}
+
+.el-icon-arrow-left:hover {
+  color: rgb(161, 153, 153);
+}
+
+.el-icon-arrow-right:hover {
+  color: rgb(161, 153, 153);
+}
+
+.el-icon-search:hover {
+  color: green;
+}
+
+.el-select .el-input {
+  width: 130px;
+}
+
+.el-dropdown {
+    max-width: 120px;
+    // color: #ccc;
+}
+
+.userNameDiv {
+  color: #ccc;
+}
+
+.userNameDiv:hover {
+  color: #ffffff;
+}
+
+.head-profile {
+  display: flex;
+  align-items: center;
+  .profile-img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+}
+
+.aside {
+  background-color: #ffffff;
+  border-right: 1px solid #ccc;
+}
+
+.main {
+  background-color: #ffffff;
+}
+
 </style>
