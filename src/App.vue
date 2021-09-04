@@ -43,11 +43,29 @@
         </div>
       </el-header>
       <el-container>
-        <el-aside class="aside" width="100px">Aside</el-aside>
-        <el-main class="main">Main</el-main>
+        <el-aside class="aside" width="160px">
+          <el-menu
+            :default-active="$route.path"
+            class="el-menu-vertical-demo"
+            background-color="#333333"
+            text-color="#fff"
+            active-text-color="#ffd04b"
+            router>
+            <el-menu-item index="/caocaoshiji">
+              <i class="el-icon-thumb"></i>
+              <span slot="title">曹操诗集</span>
+            </el-menu-item>
+            <el-menu-item index="/sishuwujing">
+              <i class="el-icon-thumb"></i>
+              <span slot="title">四书五经</span>
+            </el-menu-item>
+          </el-menu>
+        </el-aside>
+        <el-main class="main">
+            <router-view />
+        </el-main>
       </el-container>
     </el-container>
-    <router-view />
   </div>
 </template>
 
@@ -100,6 +118,10 @@ export default {
 
 <style lang="less">
 
+.body {
+  margin: 0px;
+}
+
 .layer-container {
   position: fixed;
   left: 0;
@@ -109,13 +131,15 @@ export default {
 }
 
 .head {
-  border-bottom: 1px solid #ccc;
-  background-color: rgb(0, 0, 0);
+  // border-bottom: 1px solid #ccc;
+  // position:sticky;
+  background-color: #232325f5;
   color: #ffffff;
   justify-content: space-between;
   display: flex;
   align-items: center;
   padding: 0px;
+  border-bottom:4px solid #c20c0c;
   .head-app-icon {
     .icon-wenxue {
       margin-right: 10px;
@@ -157,11 +181,13 @@ export default {
   .search {
     width: 193px;
     .el-input__inner {
-      background-color: #2b2b2c;
+      // background-color: #353538;
+      background-color: #424245;
       border-radius: 20px;
-      border: 1px solid #000;
+      border: none;
       font-size: 10px;
       color: #ffffff;
+      // border-style: solid;
     }
   }
 }
@@ -184,6 +210,10 @@ export default {
   font-family:"隶书";
   // font-weight: bold;
   text-align: center;
+}
+
+.app-icon:hover {
+  color: #ccc;
 }
 
 .el-icon-arrow-left:hover {
@@ -227,12 +257,19 @@ export default {
 }
 
 .aside {
-  background-color: #ffffff;
-  border-right: 1px solid #ccc;
+  background-color: #232325f5;
+  border-right:1px solid #cccccc4a;
+  .el-menu {
+    border-right: none;
+  }
 }
 
 .main {
-  background-color: #ffffff;
+  top: 0px;
+  height: 1000px;
+  // overflow: auto;
+  overflow-y: hidden;
+  background-color: #232325f5;
 }
 
 </style>
