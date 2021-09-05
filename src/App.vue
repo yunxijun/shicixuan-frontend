@@ -8,6 +8,13 @@
             <i class="iconfont icon-wenxue"></i>
             <a class="app-icon" alt="">诗词轩</a>
           </div>
+          <div
+            :class="{
+              'el-icon-s-fold': isCollapse,
+              'el-icon-s-unfold': !isCollapse
+            }"
+            @click="isCollapse = !isCollapse"
+          ></div>
           <div class="head-forward-backward">
             <i class="el-icon-arrow-left" @click="backward"></i>
             <i class="el-icon-arrow-right" @click="forward"></i>
@@ -43,14 +50,15 @@
         </div>
       </el-header>
       <el-container class="body-content">
-        <el-aside class="aside" width="160px">
+        <el-aside class="aside" width="auto">
           <el-menu
             :default-active="$route.path"
             class="el-menu-vertical-demo"
             background-color="#333333"
             text-color="#fff"
             active-text-color="#ffd04b"
-            router>
+            router
+            :collapse="isCollapse">
             <el-menu-item index="/caocaoshiji">
               <i class="el-icon-thumb"></i>
               <span slot="title">曹操诗集</span>
@@ -86,7 +94,8 @@ export default {
       searchValue: '',
       myImage: profileImg,
       userName: 'yunxijun',
-      logoImg
+      logoImg,
+      isCollapse: true
     }
   },
   computed: {},
@@ -160,6 +169,14 @@ export default {
     display: flex;
     align-items: center;
     height: 40px;
+    .el-icon-s-fold {
+      padding-left: 30px;
+      font-size: 20px;
+    }
+    .el-icon-s-unfold {
+      padding-left: 30px;
+      font-size: 20px;
+    }
   }
   .head-right {
     display: flex;
@@ -263,6 +280,7 @@ export default {
 
 .aside {
   // resize: horizontal;
+  // width: none;
   background-color: #232325f5;
   border-right:1px solid #cccccc4a;
   .el-menu {
@@ -277,10 +295,15 @@ export default {
   top: 0px;
   // height: 1000px;
   // overflow: auto;
-  overflow-y: hidden;
+  // overflow-y: hidden;
   background: url('./assets/bg.jpg');
   background-size: cover;
   // background-color: #232325f5;
+}
+
+.el-menu-vertical-demo:not(.el-menu--collapse) {
+  width: 200px;
+  min-height: 400px;
 }
 
 </style>
