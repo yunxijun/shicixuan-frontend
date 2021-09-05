@@ -48,7 +48,16 @@ export default {
 </script>
 
 <style scoped lang="less">
+  .caocaoshiji {
+    position: relative;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+  }
   .baseTitle {
+    position: fixed;
+    // top: 0px;
     font-size: 20px;
     color: #fff;
   }

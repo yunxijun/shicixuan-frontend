@@ -42,7 +42,7 @@
           </div>
         </div>
       </el-header>
-      <el-container>
+      <el-container class="body-content">
         <el-aside class="aside" width="160px">
           <el-menu
             :default-active="$route.path"
@@ -59,10 +59,14 @@
               <i class="el-icon-thumb"></i>
               <span slot="title">四书五经</span>
             </el-menu-item>
+            <el-menu-item index="/tangshi">
+              <i class="el-icon-thumb"></i>
+              <span slot="title">唐诗</span>
+            </el-menu-item>
           </el-menu>
         </el-aside>
         <el-main class="main">
-            <router-view />
+            <router-view/>
         </el-main>
       </el-container>
     </el-container>
@@ -118,16 +122,16 @@ export default {
 
 <style lang="less">
 
-.body {
-  margin: 0px;
-}
-
 .layer-container {
   position: fixed;
   left: 0;
   right: 0;
   top: 0;
   bottom: 0;
+  // overflow: auto;
+}
+.body-content {
+  overflow: auto;
 }
 
 .head {
@@ -142,6 +146,7 @@ export default {
   border-bottom:4px solid #c20c0c;
   .head-app-icon {
     .icon-wenxue {
+      font-size: 30px;
       margin-right: 10px;
       border-radius: 60%;
       align-items: center;
@@ -206,7 +211,7 @@ export default {
 .app-icon {
   width: 300px;
   height: 80px;
-  font-size: 20px;
+  font-size: 30px;
   font-family:"隶书";
   // font-weight: bold;
   text-align: center;
@@ -266,7 +271,7 @@ export default {
 
 .main {
   top: 0px;
-  height: 1000px;
+  // height: 1000px;
   // overflow: auto;
   overflow-y: hidden;
   background-color: #232325f5;
