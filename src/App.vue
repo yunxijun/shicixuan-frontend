@@ -262,10 +262,14 @@ export default {
 }
 
 .aside {
+  // resize: horizontal;
   background-color: #232325f5;
   border-right:1px solid #cccccc4a;
   .el-menu {
     border-right: none;
+    .el-menu-item {
+      font-size: 20px;
+    }
   }
 }
 
@@ -274,7 +278,9 @@ export default {
   // height: 1000px;
   // overflow: auto;
   overflow-y: hidden;
-  background-color: #232325f5;
+  background: url('./assets/bg.jpg');
+  background-size: cover;
+  // background-color: #232325f5;
 }
 
 </style>
