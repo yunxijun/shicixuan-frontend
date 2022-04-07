@@ -56,7 +56,7 @@ export default {
     right: 0;
     top: 0;
     bottom: 0;
-    background-color: #4b443d;
+    background-color: #2f3538;
     opacity: 0.9;
     margin-bottom: 66px;
     padding-bottom: 20px;
