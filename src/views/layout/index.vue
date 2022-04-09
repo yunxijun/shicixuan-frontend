@@ -63,6 +63,10 @@
               <i class="iconfont icon-gufengwujianzhongguofenggudaiqiwujiuqijue_huaban_huaban"></i>
               <span slot="title">曹操诗集</span>
             </el-menu-item>
+            <el-menu-item index="/chuci">
+              <i class="iconfont icon-gufengwujianzhongguofengshanzizheshan_huaban"></i>
+              <span slot="title">楚辞</span>
+            </el-menu-item>
             <el-menu-item index="/sishuwujing">
               <i class="iconfont icon-gufengwujianzhongguofengshanzizheshan_huaban"></i>
               <span slot="title">四书五经</span>
