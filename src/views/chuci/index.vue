@@ -30,7 +30,7 @@ export default {
   data () {
     return {
       poems: [],
-      baseTitle: '诗经',
+      baseTitle: '楚辞',
       totalCount: 0,
       pageSize: 6,
       currentPage: 0,

@@ -67,6 +67,10 @@
               <i class="iconfont icon-gufengwujianzhongguofengshanzizheshan_huaban"></i>
               <span slot="title">楚辞</span>
             </el-menu-item>
+            <el-menu-item index="/shijing">
+              <i class="iconfont icon-gufengwujianzhongguofengshanzizheshan_huaban"></i>
+              <span slot="title">诗经</span>
+            </el-menu-item>
             <el-menu-item index="/sishuwujing">
               <i class="iconfont icon-gufengwujianzhongguofengshanzizheshan_huaban"></i>
               <span slot="title">四书五经</span>
