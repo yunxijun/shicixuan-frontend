@@ -4,6 +4,7 @@ import VueRouter from 'vue-router'
 import Caocaoshiji from '@/views/caocaoshiji'
 import Chuci from '@/views/chuci'
 import Shijing from '@/views/shijing'
+import Lunyu from '@/views/lunyu'
 
 Vue.use(VueRouter)
 
@@ -26,6 +27,11 @@ const routes = [
     path: '/shijing',
     name: 'shijing',
     component: Shijing
+  },
+  {
+    path: '/lunyu',
+    name: 'lunyu',
+    component: Lunyu
   }
 ]
 
