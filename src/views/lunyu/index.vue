@@ -32,7 +32,7 @@ export default {
       poems: [],
       baseTitle: '论语',
       totalCount: 0,
-      pageSize: 6,
+      pageSize: 1,
       currentPage: 0,
       empty: ''
     }
@@ -94,6 +94,7 @@ export default {
     top: 0px;
     padding: 0px;
     background-color: #cae8ca;
+    border-radius: 7px;
     // border: 2px solid #4CAF50;
   }
 

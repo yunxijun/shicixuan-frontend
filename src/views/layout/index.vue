@@ -67,18 +67,32 @@
               <i class="iconfont icon-gufengwujianzhongguofengshanzizheshan_huaban"></i>
               <span slot="title">楚辞</span>
             </el-menu-item>
-            <el-menu-item index="/lunyu">
-              <i class="iconfont icon-gufengwujianzhongguofengshanzizheshan_huaban"></i>
-              <span slot="title">论语</span>
-            </el-menu-item>
             <el-menu-item index="/shijing">
               <i class="iconfont icon-gufengwujianzhongguofengshanzizheshan_huaban"></i>
               <span slot="title">诗经</span>
             </el-menu-item>
-            <el-menu-item index="/sishuwujing">
-              <i class="iconfont icon-gufengwujianzhongguofengshanzizheshan_huaban"></i>
-              <span slot="title">四书五经</span>
-            </el-menu-item>
+            <el-submenu index='/sishu'>
+              <template slot="title">
+                <i class="iconfont icon-gufengwujianzhongguofengshanzizheshan_huaban"></i>
+                <span slot="title">四书</span>
+              </template>
+              <el-menu-item index="/lunyu">
+                <i class="iconfont icon-bihualanhua"></i>
+                <span slot="title">论语</span>
+              </el-menu-item>
+              <el-menu-item index="/mengzi">
+                <i class="iconfont icon-bihualanhua"></i>
+                <span slot="title">孟子</span>
+              </el-menu-item>
+              <el-menu-item index="/daxue">
+                <i class="iconfont icon-bihualanhua"></i>
+                <span slot="title">大学</span>
+              </el-menu-item>
+              <el-menu-item index="/zhongyong">
+                <i class="iconfont icon-bihualanhua"></i>
+                <span slot="title">中庸</span>
+              </el-menu-item>
+            </el-submenu>
             <el-menu-item index="/tangshi">
               <i class="iconfont icon-bihualanhua"></i>
               <span slot="title">唐诗</span>
@@ -300,6 +314,9 @@ export default {
     .el-menu-item {
       font-size: 20px;
     }
+  }
+  .el-submenu__title {
+    font-size: 20px;
   }
 }
 

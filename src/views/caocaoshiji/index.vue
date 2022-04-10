@@ -93,6 +93,7 @@ export default {
     top: 0px;
     padding: 0px;
     background-color: #cae8ca;
+    border-radius: 7px;
     // border: 2px solid #4CAF50;
   }
 

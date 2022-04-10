@@ -11,7 +11,7 @@
       </el-pagination>
     </div>
     <div class='baseTitle'>{{baseTitle}}</div>
-    <single-article class="onepoem" v-for='(item, index) in poems' :key='index' :articleTitle='item.title' :section="item.section" :chapter="item.chapter" :articleAuthor="item.author" :paragraphs="item.content">
+    <single-article class="onepoem" v-for='(item, index) in poems' :key='index' :articleTitle='item.title' :section="item.section" :chapter="item.chapter" :articleAuthor="empty" :paragraphs="item.content">
     </single-article>
   </div>
 </template>
@@ -33,7 +33,8 @@ export default {
       baseTitle: '诗经',
       totalCount: 0,
       pageSize: 6,
-      currentPage: 0
+      currentPage: 0,
+      empty: ''
     }
   },
   computed: {},
@@ -93,6 +94,7 @@ export default {
     top: 0px;
     padding: 0px;
     background-color: #cae8ca;
+    border-radius: 7px;
     // border: 2px solid #4CAF50;
   }
 

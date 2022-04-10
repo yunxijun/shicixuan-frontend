@@ -11,30 +11,30 @@
       </el-pagination>
     </div>
     <div class='baseTitle'>{{baseTitle}}</div>
-    <single-chuci class="onepoem" v-for='(item, index) in poems' :key='index' :articleTitle='item.title' :section="section" :articleAuthor="item.author" :paragraphs="item.content">
-    </single-chuci>
+    <single-article class="onepoem" v-for='(item, index) in poems' :key='index' :articleTitle='item.title' :chapter="item.chapter" :section="empty" :articleAuthor="empty" :paragraphs="item.paragraphs">
+    </single-article>
   </div>
 </template>
 
 <script>
 
-import singleChuci from './components/singleChuci.vue'
-import { getChuciArticle } from '@/api/chuci'
+import singleArticle from './component/singleArticle.vue'
+import { getMengziArticle } from '@/api/mengzi'
 
 export default {
-  name: 'Chuci',
+  name: 'Lunyu',
   components: {
-    singleChuci
+    singleArticle
   },
   props: {},
   data () {
     return {
       poems: [],
-      baseTitle: '楚辞',
+      baseTitle: '孟子',
       totalCount: 0,
-      pageSize: 6,
+      pageSize: 1,
       currentPage: 0,
-      section: ''
+      empty: ''
     }
   },
   computed: {},
@@ -45,7 +45,7 @@ export default {
   mounted () {},
   methods: {
     loadPoems (page) {
-      getChuciArticle({
+      getMengziArticle({
         skip: page * this.pageSize,
         limit: this.pageSize
       }).then(res => {
@@ -95,7 +95,9 @@ export default {
     padding: 0px;
     background-color: #cae8ca;
     border-radius: 7px;
+    // opacity: 0.7;
     // border: 2px solid #4CAF50;
+    border-radius: 7px;
   }
 
 </style>

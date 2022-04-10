@@ -5,7 +5,7 @@
       <div v-if="chapter != ''" class='chapter'>{{chapter}}</div>
       <div v-if="section != ''" class='section'>{{section}}</div>
       <div v-if="articleAuthor != ''" class='author'>{{articleAuthor}}</div>
-      <div class='oneLine' v-for='(item, index) in paragraphs' :key='index'>{{item}}</div>
+      <div class='oneLine' v-for='(item, index) in paragraphs' :key='index'>{{`\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0` + item}}</div>
     </div>
   </div>
 </template>
@@ -48,7 +48,7 @@ export default {
   }
   .wrap {
     // width: auto;
-    max-width: 500px;
+    max-width: 1000px;
     margin: auto;
     padding-bottom: -10px;
     // margin: auto;
@@ -58,9 +58,10 @@ export default {
       color: #fff;
       margin-left: auto;
       margin-right: auto;
-      margin-bottom: 15px;
-      margin-top: 15px;
-      text-align: center;
+      // margin-bottom: 15px;
+      // margin-top: 15px;
+      line-height: 36px;
+      text-align: justify;
     }
     .title {
       width: auto;
