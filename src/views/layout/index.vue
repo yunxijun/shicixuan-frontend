@@ -97,6 +97,10 @@
               <i class="iconfont icon-bihualanhua"></i>
               <span slot="title">唐诗</span>
             </el-menu-item>
+            <el-menu-item index="/songci">
+              <i class="iconfont icon-bihualanhua"></i>
+              <span slot="title">宋词</span>
+            </el-menu-item>
           </el-menu>
         </el-aside>
         <el-main class="main">
