@@ -101,6 +101,24 @@
               <i class="iconfont icon-bihualanhua"></i>
               <span slot="title">宋词</span>
             </el-menu-item>
+            <el-menu-item index="/songshi">
+              <i class="iconfont icon-bihualanhua"></i>
+              <span slot="title">宋诗</span>
+            </el-menu-item>
+            <el-submenu index='/wudaishiguo'>
+              <template slot="title">
+                <i class="iconfont icon-gufengwujianzhongguofengshanzizheshan_huaban"></i>
+                <span slot="title">五代十国</span>
+              </template>
+              <el-menu-item index="/huajianji">
+                <i class="iconfont icon-bihualanhua"></i>
+                <span slot="title">花间集</span>
+              </el-menu-item>
+              <el-menu-item index="/nantang">
+                <i class="iconfont icon-bihualanhua"></i>
+                <span slot="title">南唐二主词</span>
+              </el-menu-item>
+            </el-submenu>
           </el-menu>
         </el-aside>
         <el-main class="main">

@@ -10,6 +10,10 @@ import Daxue from '@/views/daxue'
 import Zhongyong from '@/views/zhongyong'
 import Tangshi from '@/views/tangshi'
 import Songci from '@/views/songci'
+import Songshi from '@/views/songshi'
+
+import Huajianji from '@/views/huajianji'
+import Nantang from '@/views/nantang'
 
 Vue.use(VueRouter)
 
@@ -62,6 +66,21 @@ const routes = [
     path: '/songci',
     name: 'songci',
     component: Songci
+  },
+  {
+    path: '/songshi',
+    name: 'songshi',
+    component: Songshi
+  },
+  {
+    path: '/nantang',
+    name: 'nantang',
+    component: Nantang
+  },
+  {
+    path: '/huajianji',
+    name: 'huajianji',
+    component: Huajianji
   }
 ]
 
