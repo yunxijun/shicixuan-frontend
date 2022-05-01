@@ -22,7 +22,7 @@ import singleArticle from './components/singleArticle.vue'
 import { getShijingArticle } from '@/api/shijing'
 
 export default {
-  name: 'Shijing',
+  name: 'shijing',
   components: {
     singleArticle
   },

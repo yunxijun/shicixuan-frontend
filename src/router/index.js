@@ -14,6 +14,7 @@ import Songshi from '@/views/songshi'
 
 import Huajianji from '@/views/huajianji'
 import Nantang from '@/views/nantang'
+import AboutUs from '@/views/aboutus'
 
 Vue.use(VueRouter)
 
@@ -81,6 +82,11 @@ const routes = [
     path: '/huajianji',
     name: 'huajianji',
     component: Huajianji
+  },
+  {
+    path: '/aboutus',
+    name: 'AboutUs',
+    component: AboutUs
   }
 ]
 

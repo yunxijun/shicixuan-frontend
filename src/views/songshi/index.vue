@@ -22,7 +22,7 @@ import singleArticle from './component/singleArticle.vue'
 import { getSongshiArticle } from '@/api/songshi'
 
 export default {
-  name: 'Lunyu',
+  name: 'songshi',
   components: {
     singleArticle
   },

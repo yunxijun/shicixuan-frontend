@@ -22,7 +22,7 @@ import singleCao from './components/singleArticle.vue'
 import { getCaocaoshijiArticle } from '@/api/caocaoshiji'
 
 export default {
-  name: 'Caocaoshiji',
+  name: 'caocaoshiji',
   components: {
     singleCao
   },

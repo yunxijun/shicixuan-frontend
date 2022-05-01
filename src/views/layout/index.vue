@@ -119,6 +119,10 @@
                 <span slot="title">南唐二主词</span>
               </el-menu-item>
             </el-submenu>
+            <el-menu-item index="/aboutus">
+              <i class="iconfont icon-bihualanhua"></i>
+              <span slot="title">关于</span>
+            </el-menu-item>
           </el-menu>
         </el-aside>
         <el-main class="main">

@@ -22,7 +22,7 @@ import singleArticle from './component/singleArticle.vue'
 import { getNantangArticle } from '@/api/nantang'
 
 export default {
-  name: 'Lunyu',
+  name: 'nantang',
   components: {
     singleArticle
   },
