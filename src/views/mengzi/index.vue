@@ -45,10 +45,16 @@ export default {
   mounted () {},
   methods: {
     loadPoems (page) {
-      getMengziArticle({
-        skip: page * this.pageSize,
-        limit: this.pageSize
-      }).then(res => {
+      this.$router.push({
+        path: '/mengzi',
+        query: {
+          skip: page * this.pageSize,
+          limit: this.pageSize
+        }
+      })
+      getMengziArticle(
+        this.$route.query
+      ).then(res => {
         console.log(res)
         this.poems = res.data.poems
         this.totalCount = res.data.poemsCount
